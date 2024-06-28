@@ -1,1 +1,3 @@
-export const meals = ["injera"];
+export default {
+  searchedMeals: [],
+};
