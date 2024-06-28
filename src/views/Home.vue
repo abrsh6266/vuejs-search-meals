@@ -11,11 +11,17 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import store from '../store';
+import axiosClient from '../axiosClient';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTYVWXYZ'.split('')
-const url = 'www.themealdb.com/api/json/v1/1/list.php?i=list'
+const ingredients = ref([])
+onMounted(async () => {
+    const response = await axiosClient.get('list.php?i=list')
+    ingredients.value = response.data
+    console.log(response)
+})
 </script>
 
 

@@ -1,7 +1,7 @@
 <template>
-<div>
-    Meal list
-</div>
+    <div>
+        by ingredients
+    </div>
 </template>
 
 <script setup>
